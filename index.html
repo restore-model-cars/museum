@@ -13,6 +13,12 @@ font-family:Arial, sans-serif;
 background-color:#050910; /* bleu nuit */
 color:white;
 }
+ .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
 
 /* bandeau du haut */
 .banniere{
@@ -76,7 +82,7 @@ border-radius:5px;
 <header class="banniere">
 <h1></h1>
 </header>
-
+<div class="grid-container">
 <div class="texte-haut-gauche">
 <center>Bienvenue dans l’univers d’Encyclo-Track.
 Plongez dans l’histoire des circuits automobiles,
