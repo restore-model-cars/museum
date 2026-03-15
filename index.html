@@ -1,174 +1,321 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mon site</title>
+
+<title>Encyclo-Track</title>
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial, sans-serif;
-background-color:#050910; /* bleu nuit */
-color:white;
+padding:0;
+box-sizing:border-box;
 }
 
-/* bandeau du haut */
-.banniere{
-height:180px;
-background-image:url("titre.png");
-background-repeat: no-repeat ;   
-background-size:center;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
+body{
+
+font-family:Arial;
+background:#050910;
+color:white;
+
 }
-/* texte du haut */
-.texte-haut-gauche{
-position:absolute;
-top:200px;
-left:180px;
-color:#74c4fb;
+
+/* MENU */
+
+header{
+
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:20px;
+background:rgba(5,9,16,0.6);
+backdrop-filter:blur(6px);
+z-index:1000;
+
+}
+
+header a{
+
+color:white;
+text-decoration:none;
 font-size:18px;
-font-weight:bold;
+opacity:0.8;
+
 }
-/* bloc avec image de fond */
-.bloc-image{
-height:800px;
-background-image:url("fond.png");
-background-repeat: no-repeat round;  
-background-size:80%;
+
+header a:hover{
+
+opacity:1;
+
+}
+
+/* HERO */
+
+.hero{
+
+height:100vh;
+
+background-image:url("images/home_background.jpg");
+background-size:cover;
 background-position:center;
+
 display:flex;
-align-items:center;
+flex-direction:column;
 justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+
 }
 
-/* titre */
-.banniere h1{
-color:white;
-font-size:40px;
-background:rgba(0,0,0,00);
-padding:10px 20px;
+.logo{
+
+font-size:48px;
+letter-spacing:3px;
+
+}
+
+.tagline{
+
+font-size:64px;
+margin:20px 0;
+
+}
+
+.subtitle{
+
+font-size:20px;
+max-width:700px;
+opacity:0.9;
+
+}
+
+.cta{
+
+margin-top:40px;
+
+padding:16px 40px;
+
+border:2px solid #3bd3ff;
 border-radius:8px;
+
+color:#3bd3ff;
+
+text-decoration:none;
+
+transition:0.3s;
+
 }
 
-  /* bouton */
-.bouton-explorer{
-position:absolute;
-bottom:90px; /* distance du bas */
-padding:12px 25px;
-background-color:#ffffff;
-color:#0b1d3a;
-text-decoration:none;
-font-weight:bold;
-border-radius:5px;
-}
-    /* bouton continent */
-  .button1{
-position:absolute;
-top:450px;
-left:20px;
-padding:15px 40px;
-border:2px solid white;
-border-radius:40px;
-text-decoration:none;
-color:white;
-transition:0.3s;
-}
- button:hover{
-background:white;
-color:black;
-}
-  .button2{
-position:absolute;
-top:550px;
-left:20px;
-padding:15px 30px;
-border:2px solid white;
-border-radius:40px;
-text-decoration:none;
-color:white;
-transition:0.3s;
-}
- button:hover{
-background:white;
-color:black;
-}
-  .button3{
-position:absolute;
-top:650px;
-left:20px;
-padding:15px 40px;
-border:2px solid white;
-border-radius:40px;
-text-decoration:none;
-color:white;
-transition:0.3s;
-}
- button:hover{
-background:white;
-color:black;
-}
- .button4{
-position:absolute;
-top:750px;
-left:20px;
-padding:15px 40px;
-border:2px solid white;
-border-radius:40px;
-text-decoration:none;
-color:white;
-transition:0.3s;
-}
- button:hover{
-background:white;
-color:black;
-}
-.button5{
-position:absolute;
-top:850px;
-left:20px;
-padding:15px 40px;
-border:2px solid white;
-border-radius:40px;
-text-decoration:none;
-color:white;
-transition:0.3s;
-}
- button:hover{
-background:white;
-color:black;
+.cta:hover{
+
+background:#3bd3ff;
+color:#050910;
+
 }
 
+/* SECTIONS */
 
+.section{
+
+padding:80px 20px;
+text-align:center;
+
+}
+
+.section h2{
+
+font-size:36px;
+margin-bottom:40px;
+
+}
+
+/* CONTINENTS */
+
+.continents{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+gap:20px;
+
+max-width:1000px;
+margin:auto;
+
+}
+
+.card{
+
+background:#0d1420;
+
+padding:40px;
+
+border-radius:10px;
+
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-5px);
+background:#132033;
+
+}
+
+/* CIRCUITS */
+
+.circuits{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+max-width:1100px;
+margin:auto;
+
+}
+
+.circuit{
+
+background:#0d1420;
+
+padding:30px;
+
+border-radius:10px;
+
+}
+
+/* FOOTER */
+
+footer{
+
+text-align:center;
+padding:30px;
+background:#02050a;
+
+font-size:14px;
+opacity:0.7;
+
+}
+
+/* RESPONSIVE */
+
+@media (max-width:900px){
+
+.tagline{
+font-size:42px;
+}
+
+.logo{
+font-size:36px;
+}
+
+}
 
 </style>
+
 </head>
 
 <body>
 
-<header class="banniere">
-<h1></h1>
-</header>
-<p><a href="afrique.html"style="color:white;"<a class="button1" >Afrique</a></p>
-<p><a href="amerique.html"style="color:white;"<a class="button2" >Amérique</a></p>
-<p><a href="asie.html"style="color:white;"<a class="button3" >Asie</a></p>
-<p><a href="europe.html"style="color:white;"<a class="button4" >Europe</a></p>
-<p><a href="oceanie.html"style="color:white;"<a class="button5" >Océanie</a></p>
-<div class="texte-haut-gauche">
-<center>Bienvenue dans l’univers d’Encyclo-Track.
-Plongez dans l’histoire des circuits automobiles,
-explorez leurs tracés et revivez la passion du sport automobile à travers les époques.</center>
-</div>
-<section class="bloc-image">
+<header>
 
+<a href="index.html">Accueil</a>
+<a href="track.html">Circuits</a>
+<a href="map.html">Carte</a>
+<a href="about.html">À propos</a>
+
+</header>
+
+<section class="hero">
+
+<div class="logo">ENCYCLO-TRACK</div>
+
+<div class="tagline">
+L'EMPREINTE DU TRACÉ
+</div>
+
+<div class="subtitle">
+
+Découvrez les circuits emblématiques du monde entier à travers
+leur histoire, leur géographie et l’évolution de leurs tracés.
+
+</div>
+
+<a class="cta" href="continents.html">
+Explorer les circuits
 </a>
+
 </section>
 
+<section class="section">
 
+<h2>Explorer par continent</h2>
+
+<div class="continents">
+
+<a href="europe.html"><div class="card">Europe</div></a>
+<a href="amerique.html"><div class="card">Amérique</div></a>
+<a href="asie.html"><div class="card">Asie</div></a>
+<a href="afrique.html"><div class="card">Afrique</div></a>
+<a href="oceanie.html"><div class="card">Océanie</div></a>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Circuits emblématiques</h2>
+
+<div class="circuits">
+
+<div class="circuit">Le Mans</div>
+<div class="circuit">Spa-Francorchamps</div>
+<div class="circuit">Monza</div>
+<div class="circuit">Nürburgring</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>À propos du projet</h2>
+
+<p style="max-width:700px;margin:auto;line-height:1.6;opacity:0.9">
+
+Géomaticien de profession et passionné de sport automobile,
+j’ai souhaité réunir ces deux univers à travers Encyclo-Track.
+Ce site explore les circuits du monde sous l’angle de la cartographie,
+de leur évolution et de leur histoire.
+
+<br><br>
+
+Car sans circuit, la course n’est rien.
+
+</p>
+
+</section>
+
+<footer>
+
+© Encyclo-Track
+
+</footer>
 
 </body>
 </html>
