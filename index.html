@@ -1,320 +1,176 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Encyclo-Track</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-
-font-family:Arial;
-background:#050910;
-color:white;
-
-}
-
-/* MENU */
-
-header{
-
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:center;
-gap:40px;
-padding:20px;
-background:rgba(5,9,16,0.6);
-backdrop-filter:blur(6px);
-z-index:1000;
-
-}
-
-header a{
-
-color:white;
-text-decoration:none;
-font-size:18px;
-opacity:0.8;
-
-}
-
-header a:hover{
-
-opacity:1;
-
-}
-
-/* HERO */
-
-.hero{
-
-height:100vh;
-
-background-image:url("home_background.png");
-background-size:cover;
-background-position:center;
-
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-
-text-align:center;
-
-padding:20px;
-
-}
-
-.logo{
-
-font-size:48px;
-letter-spacing:3px;
-
-}
-
-.tagline{
-
-font-size:64px;
-margin:20px 0;
-
-}
-
-.subtitle{
-
-font-size:20px;
-max-width:700px;
-opacity:0.9;
-
-}
-
-.cta{
-
-margin-top:40px;
-
-padding:16px 40px;
-
-border:2px solid #3bd3ff;
-border-radius:8px;
-
-color:#3bd3ff;
-
-text-decoration:none;
-
-transition:0.3s;
-
-}
-
-.cta:hover{
-
-background:#3bd3ff;
-color:#050910;
-
-}
-
-/* SECTIONS */
-
-.section{
-
-padding:80px 20px;
-text-align:center;
-
-}
-
-.section h2{
-
-font-size:36px;
-margin-bottom:40px;
-
-}
-
-/* CONTINENTS */
-
-.continents{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-
-gap:20px;
-
-max-width:1000px;
-margin:auto;
-
-}
-
-.card{
-
-background:#0d1420;
-
-padding:40px;
-
-border-radius:10px;
-
-transition:0.3s;
-
-}
-
-.card:hover{
-
-transform:translateY(-5px);
-background:#132033;
-
-}
-
-/* CIRCUITS */
-
-.circuits{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:20px;
-
-max-width:1100px;
-margin:auto;
-
-}
-
-.circuit{
-
-background:#0d1420;
-
-padding:30px;
-
-border-radius:10px;
-
-}
-
-/* FOOTER */
-
-footer{
-
-text-align:center;
-padding:30px;
-background:#02050a;
-
-font-size:14px;
-opacity:0.7;
-
-}
-
-/* RESPONSIVE */
-
-@media (max-width:900px){
-
-.tagline{
-font-size:42px;
-}
-
-.logo{
-font-size:36px;
-}
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encyclo-Track | Géomatique & Passion Automobile</title>
+    <style>
+        :root {
+            --dark-bg: #050a14;
+            --card-bg: #0a1122;
+            --neon-blue: #00d4ff;
+            --neon-red: #ff3c3c;
+            --text-gray: #a0aec0;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Header Responsive */
+        header {
+            background: linear-gradient(rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 0.9)), 
+                        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1200'); /* Image temporaire */
+            background-size: cover;
+            background-position: center;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 3px solid var(--neon-blue);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 4rem); /* Taille adaptative */
+            letter-spacing: 4px;
+            margin: 0;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            color: var(--neon-red);
+            font-weight: bold;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            border-left: 4px solid var(--neon-red);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        /* Grille Responsive */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #1e2a44;
+            padding: 25px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--neon-blue);
+        }
+
+        .card p {
+            color: var(--text-gray);
+            flex-grow: 1; /* Aligne les boutons en bas */
+        }
+
+        /* Boutons */
+        .btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--neon-blue);
+            border: 2px solid var(--neon-blue);
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background: var(--neon-blue);
+            color: var(--dark-bg);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid #1e2a44;
+            font-size: 0.9rem;
+            color: #4a5a78;
+        }
+
+        /* Ajustements mobiles spécifiques */
+        @media (max-width: 600px) {
+            header { min-height: 40vh; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-
-<a href="index.html">Accueil</a>
-<a href="track.html">Circuits</a>
-<a href="map.html">Carte</a>
-<a href="about.html">À propos</a>
-
+    <h1>ENCYCLO-TRACK</h1>
+    <p class="subtitle">GÉOMATIQUE • HISTOIRE & MODÉLISME</p>
+    <p>L'expertise cartographique au service du sport automobile.</p>
 </header>
 
-<section class="hero">
+<div class="container">
+    <h2>Les Dossiers de l'Expert</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Le Mans : Analyse SIG</h3>
+            <p>Étude des ruptures de pente des Hunaudières et superposition des tracés 1923-2026. Données Lidar incluses.</p>
+            <a href="#" class="btn">Découvrir le tracé</a>
+        </div>
 
-<div class="logo">ENCYCLO-TRACK</div>
+        <div class="card">
+            <h3>Atelier 1/8 : Ferrari 499P</h3>
+            <p>Découvrez comment la précision de la géomatique permet d'atteindre un réalisme extrême en modélisme d'exposition.</p>
+            <a href="https://www.facebook.com/share/p/1E9h8uFKT3/" class="btn">Voir la Galerie FB</a>
+        </div>
 
-<div class="tagline">
-L'EMPREINTE DU TRACÉ
+        <div class="card">
+            <h3>Simracing & Topographie</h3>
+            <p>Comprendre l'impact du relief réel sur le comportement physique des voitures dans Le Mans Ultimate.</p>
+            <a href="#" class="btn">Bientôt disponible</a>
+        </div>
+    </div>
 </div>
 
-<div class="subtitle">
-
-Découvrez les circuits emblématiques du monde entier à travers
-leur histoire, leur géographie et l’évolution de leurs tracés.
-
-</div>
-
-<a class="cta" href="continents.html">
-Explorer les circuits
-</a>
-
-</section>
-
-<section class="section">
-
-<h2>Explorer par continent</h2>
-
-<div class="continents">
-
-<a href="europe.html"><div class="card">Europe</div></a>
-<a href="amerique.html"><div class="card">Amérique</div></a>
-<a href="asie.html"><div class="card">Asie</div></a>
-<a href="afrique.html"><div class="card">Afrique</div></a>
-<a href="oceanie.html"><div class="card">Océanie</div></a>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>Circuits emblématiques</h2>
-
-<div class="circuits">
-
-<div class="circuit">Le Mans</div>
-<div class="circuit">Spa-Francorchamps</div>
-<div class="circuit">Monza</div>
-<div class="circuit">Nürburgring</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>À propos du projet</h2>
-
-<p style="max-width:700px;margin:auto;line-height:1.6;opacity:0.9">
-
-Géomaticien de profession et passionné de sport automobile,
-j’ai souhaité réunir ces deux univers à travers Encyclo-Track.
-Ce site explore les circuits du monde sous l’angle de la cartographie,
-de leur évolution et de leur histoire.
-
-<br><br>
-
-Car sans circuit, la course n’est rien.
-
-</p>
-
-</section>
-
-<footer>
-
-© Encyclo-Track
-
+<footer class="footer">
+    <p><strong>Encyclo-Track</strong> - Site conçu par un expert géomaticien passionné.</p>
+    <p>© 2026 - Tous droits réservés.</p>
 </footer>
 
 </body>
