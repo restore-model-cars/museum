@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Professeur Apex - Encyclo-Track</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#050910;
+color:white;
+}
+
+/* MENU */
+
+header{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:20px;
+background:#0c1420;
+}
+
+header a{
+color:white;
+text-decoration:none;
+opacity:0.8;
+}
+
+header a:hover{
+opacity:1;
+}
+
+/* TITRE */
+
+.title{
+text-align:center;
+padding:40px 20px;
+}
+
+/* CONTENU */
+
+.container{
+max-width:1000px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+padding:20px;
+align-items:center;
+}
+
+/* IMAGE */
+
+.container img{
+width:100%;
+max-width:400px;
+display:block;
+margin:auto;
+}
+
+/* TEXTE */
+
+.text{
+line-height:1.7;
+}
+
+/* ENCADRÉ */
+
+.highlight{
+background:#0c1420;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:800px){
+
+.container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<a href="index.html">Accueil</a>
+<a href="track.html">Circuits</a>
+<a href="map.html">Carte</a>
+<a href="about.html">À propos</a>
+
+</header>
+
+<div class="title">
+
+<h1>Professeur Apex</h1>
+<p>Votre guide dans l’univers des circuits automobiles</p>
+
+</div>
+
+<div class="container">
+
+<!-- IMAGE -->
+<div>
+<img src="images/professeur_apex.png" alt="Professeur Apex">
+</div>
+
+<!-- TEXTE -->
+<div class="text">
+
+<p>
+
+Le Professeur Apex est votre guide dans l’univers d’Encyclo-Track.
+Passionné par les circuits automobiles, il vous accompagne à travers
+leurs histoires, leurs tracés et leurs évolutions.
+
+</p>
+
+<p>
+
+Toujours curieux, il partage avec vous des anecdotes et des faits
+surprenants pour mieux comprendre ces lieux mythiques du sport automobile.
+
+</p>
+
+<div class="highlight">
+
+💡 <b>Le saviez-vous ?</b><br><br>
+
+Les premières versions de certains circuits dépassaient les 10 km,
+utilisant des routes ouvertes à la circulation.
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
