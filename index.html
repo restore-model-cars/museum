@@ -4,224 +4,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Musée Miniature | Visite Virtuelle</title>
-    
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    
+    <title>Le Musée Miniature | L'empreinte des légendes</title>
     <style>
+        /* Importation d'une police moderne */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
+
         :root {
-            --bleu-nuit: #050b1a;
-            --bleu-electrique: #00d4ff;
-            --or-doux: #c5a358;
-            --texte-gris: #a0adbd;
+            --accent-blue: #00d4ff;
+            --text-gray: #a0adbd;
+            --dark-bg: #050b1a;
         }
 
         body, html {
             margin: 0;
             padding: 0;
+            width: 100%;
             height: 100%;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bleu-nuit);
+            background-color: var(--dark-bg);
             color: white;
-            overflow-x: hidden;
+            font-family: 'Rajdhani', sans-serif;
+            overflow: hidden; /* Empêche le scroll pour garder l'aspect application */
         }
 
-        /* Arrière-plan avec effet de grille futuriste */
-        .bg-overlay {
+        /* Arrière-plan avec votre image générée */
+        .background-container {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, #102a43 0%, #050b1a 100%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* REMPLACEZ 'votre-image-sans-texte.jpg' PAR VOTRE FICHIER */
+            background: url('votre-image-sans-texte.jpg') no-repeat center center fixed;
+            background-size: cover;
             z-index: -1;
         }
 
-        /* Header / Navigation */
+        /* Navigation */
         header {
             display: flex;
             justify-content: center;
-            padding: 20px;
-            background: rgba(5, 11, 26, 0.8);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            align-items: center;
+            padding: 30px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
         }
 
         nav a {
-            color: white;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: 300;
-            text-transform: uppercase;
+            color: white;
+            font-size: 1.1em;
             letter-spacing: 1px;
-            font-size: 0.9em;
-            transition: color 0.3s;
+            transition: 0.3s;
+            opacity: 0.8;
         }
 
-        nav a:hover { color: var(--bleu-electrique); }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 40px 20px;
+        nav a:hover {
+            color: var(--accent-blue);
+            opacity: 1;
+            text-shadow: 0 0 10px var(--accent-blue);
         }
 
-        .logo-area {
-            margin-bottom: 20px;
+        .search-icon {
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-left: 10px;
         }
 
-        .logo-area h1 {
-            font-size: 2.5em;
-            letter-spacing: 4px;
+        /* Contenu Principal */
+        main {
+            padding-left: 8%;
+            padding-top: 5%;
+            max-width: 500px;
+        }
+
+        .logo-section {
+            margin-bottom: 40px;
+        }
+
+        .logo-section h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2em;
             margin: 0;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            background: linear-gradient(to right, white, var(--bleu-electrique));
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3em;
+            line-height: 1.1;
+            margin: 20px 0;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #fff, var(--accent-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero h2 {
-            font-size: 1.5em;
-            color: var(--or-doux);
-            text-transform: uppercase;
-            font-weight: 300;
+        .hero-description {
+            font-size: 1.2em;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 450px;
         }
 
-        /* Conteneur de la Carte SIG */
-        .map-container {
-            width: 90%;
-            max-width: 1100px;
-            height: 600px;
-            margin: 20px auto;
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 0 50px rgba(0, 212, 255, 0.1);
-            position: relative;
-        }
-
-        #map {
-            width: 100%;
-            height: 100%;
-            background: #050b1a; /* Fond de carte noir */
-        }
-
-        /* Style des Tooltips Leaflet (Popups) */
-        .leaflet-tooltip-own {
-            background: rgba(0, 20, 40, 0.9) !important;
-            border: 1px solid var(--bleu-electrique) !important;
-            color: white !important;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .btn-visite {
+        /* Bouton Exploration */
+        .btn-exploration {
             display: inline-block;
-            margin-top: 30px;
-            padding: 12px 30px;
-            border: 1px solid var(--bleu-electrique);
-            color: var(--bleu-electrique);
+            padding: 15px 35px;
+            border: 1px solid var(--accent-blue);
+            color: white;
             text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s;
-            background: rgba(0, 212, 255, 0.05);
+            border-radius: 8px;
+            font-size: 1.1em;
+            background: rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn-visite:hover {
-            background: var(--bleu-electrique);
-            color: var(--bleu-nuit);
-            box-shadow: 0 0 20px var(--bleu-electrique);
+        .btn-exploration:hover {
+            background: var(--accent-blue);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+            transform: translateY(-2px);
         }
+
+        /* Zones Interactives du Plan (SIG) */
+        /* Ces labels se placent par-dessus le plan de l'image */
+        .map-label {
+            position: absolute;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8em;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            pointer-events: none;
+        }
+
+        /* Positionnement approximatif basé sur votre image */
+        .label-f1 { top: 22%; left: 58%; }
+        .label-rallye { top: 28%; left: 75%; }
+        .label-endurance { top: 46%; left: 77%; }
+        .label-civil { top: 61%; left: 63%; }
+        .label-circuits { top: 78%; left: 73%; }
 
     </style>
 </head>
 <body>
 
-    <div class="bg-overlay"></div>
+    <div class="background-container"></div>
 
     <header>
         <nav>
             <a href="#">Accueil</a>
+            <a href="#">Salles</a>
             <a href="#">F1</a>
             <a href="#">Rallye</a>
             <a href="#">Endurance</a>
             <a href="#">Civil</a>
-            <a href="#">Circuits</a>
+            <a href="#">Circuits Célèbres</a>
             <a href="#">Atelier</a>
+            <span class="search-icon">🔍</span>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="logo-area">
+    <main>
+        <div class="logo-section">
             <h1>Le Musée Miniature</h1>
-            <h2>L'empreinte des légendes</h2>
         </div>
-        <p style="color: var(--texte-gris); max-width: 600px; margin: 0 auto;">
-            Explorez notre collection à travers cette interface cartographique interactive.
+
+        <h2 class="hero-title">L'empreinte des légendes <br>en miniature</h2>
+
+        <p class="hero-description">
+            Découvrez une collection unique de voitures miniatures à travers une expérience cartographique immersive de notre musée virtuel.
         </p>
 
-        <div class="map-container">
-            <div id="map"></div>
-        </div>
+        <a href="#" class="btn-exploration">Exploration Interactive des Salles</a>
+    </main>
 
-        <a href="#map" class="btn-visite">Exploration Interactive des Salles</a>
-    </section>
+    <div class="map-label label-f1">Salle F1</div>
+    <div class="map-label label-rallye">Zone Rallye</div>
+    <div class="map-label label-endurance">Galerie Endurance</div>
+    <div class="map-label label-civil">Salon Civil</div>
+    <div class="map-label label-circuits">Circuits Célèbres</div>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <script>
-        // Initialisation du SIG Web
-        // On utilise L.CRS.Simple car c'est un plan de bâtiment, pas une carte du monde.
-        var map = L.map('map', {
-            crs: L.CRS.Simple,
-            minZoom: -1,
-            maxZoom: 2,
-            attributionControl: false
-        });
-
-        // Définition des dimensions du plan (en pixels)
-        var w = 1200, h = 800;
-        var url = 'https://via.placeholder.com/1200x800/050b1a/00d4ff?text=PLAN+DU+MUSEE+STRUCTURE+3D'; // Remplacez par votre image de plan
-        
-        var southWest = map.unproject([0, h], map.getMaxZoom()-1);
-        var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
-        var bounds = new L.LatLngBounds(southWest, northEast);
-
-        // Ajout de l'image de fond
-        L.imageOverlay(url, bounds).addTo(map);
-        map.setMaxBounds(bounds);
-        map.fitBounds(bounds);
-
-        // Exemple de zones interactives (Salles)
-        var zones = [
-            { name: "Salle F1", color: "#ff0000", coords: [[-150, 100], [-150, 400], [-350, 400], [-350, 100]], link: "/f1" },
-            { name: "Zone Rallye", color: "#00ff00", coords: [[-150, 450], [-150, 750], [-350, 750], [-350, 450]], link: "/rallye" },
-            { name: "Atelier", color: "#ffa500", coords: [[-450, 800], [-450, 1100], [-650, 1100], [-650, 800]], link: "/atelier" }
-        ];
-
-        zones.forEach(function(zone) {
-            var poly = L.polygon(zone.coords, {
-                color: varProp('--bleu-electrique'),
-                fillColor: zone.color,
-                fillOpacity: 0.1,
-                weight: 2
-            }).addTo(map);
-
-            poly.bindTooltip(zone.name, {
-                permanent: false, 
-                direction: "center",
-                className: "leaflet-tooltip-own"
-            });
-
-            poly.on('mouseover', function() { this.setStyle({ fillOpacity: 0.4 }); });
-            poly.on('mouseout', function() { this.setStyle({ fillOpacity: 0.1 }); });
-            poly.on('click', function() { alert("Direction : " + zone.name); });
-        });
-
-        function varProp(name) {
-            return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
-        }
-    </script>
 </body>
 </html>
-
+ 
