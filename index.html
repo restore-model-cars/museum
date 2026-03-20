@@ -14,7 +14,6 @@
             --text-gray: #a0adbd;
             --dark-bg: #050b1a;
         }
-        }
 
         body, html {
             margin: 0;
@@ -27,7 +26,19 @@
             overflow: hidden; /* Empêche le scroll pour garder l'aspect application */
         }
 
-      
+        /* Arrière-plan avec votre image générée */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* REMPLACEZ 'votre-image-sans-texte.jpg' PAR VOTRE FICHIER */
+            background: url('votre-image-sans-texte.jpg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -1;
+        }
+
         /* Navigation */
         header {
             display: flex;
@@ -35,8 +46,7 @@
             align-items: center;
             padding: 30px 0;
             position: relative;
-           z-index: 10;
-           
+            z-index: 10;
         }
 
         nav {
@@ -58,6 +68,12 @@
             color: var(--accent-blue);
             opacity: 1;
             text-shadow: 0 0 10px var(--accent-blue);
+        }
+
+        .search-icon {
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-left: 10px;
         }
 
         /* Contenu Principal */
@@ -119,29 +135,37 @@
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
             transform: translateY(-2px);
         }
-         /* Arrière-plan avec votre image générée */
-        .background-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("fond2.jpg") no-repeat center center fixed;
-            background-size: cover;
-          
+
+        /* Zones Interactives du Plan (SIG) */
+        /* Ces labels se placent par-dessus le plan de l'image */
+        .map-label {
+            position: absolute;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8em;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            pointer-events: none;
         }
 
-        </style>
+        /* Positionnement approximatif basé sur votre image */
+        .label-f1 { top: 22%; left: 58%; }
+        .label-rallye { top: 28%; left: 75%; }
+        .label-endurance { top: 46%; left: 77%; }
+        .label-civil { top: 61%; left: 63%; }
+        .label-circuits { top: 78%; left: 73%; }
+
+    </style>
 </head>
 <body>
 
     <div class="background-container"></div>
 
     <header>
-            <nav>
+        <nav>
             <a href="#">A propos</a>
             <a href="#">Contact</a>
-            <a href="https://www.facebook.com/RestoreModelCars/">Facebook</a>
+            <a href="#">Facebook</a>
             </nav>
     </header>
 
@@ -159,7 +183,13 @@
         <a href="#" class="btn-exploration">Exploration Interactive des Salles</a>
     </main>
 
-   
+    <div class="map-label label-f1">Salle F1</div>
+    <div class="map-label label-rallye">Zone Rallye</div>
+    <div class="map-label label-endurance">Galerie Endurance</div>
+    <div class="map-label label-civil">Salon Civil</div>
+    <div class="map-label label-circuits">Circuits Célèbres</div>
+
 </body>
 </html>
  
+
