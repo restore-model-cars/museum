@@ -1,194 +1,227 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encyclo-Track | Géomatique & Passion Automobile</title>
+    <title>Le Musée Miniature | Visite Virtuelle</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
     <style>
         :root {
-            --dark-bg: #050a14;
-            --card-bg: #0a1122;
-            --neon-blue: #00d4ff;
-            --neon-red: #ff3c3c;
-            --text-gray: #a0aec0;
+            --bleu-nuit: #050b1a;
+            --bleu-electrique: #00d4ff;
+            --or-doux: #c5a358;
+            --texte-gris: #a0adbd;
         }
 
-        body {
-            background-color: var(--dark-bg);
-            color: #ffffff;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        body, html {
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            height: 100%;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bleu-nuit);
+            color: white;
+            overflow-x: hidden;
         }
 
-        /* Header Responsive */
+        /* Arrière-plan avec effet de grille futuriste */
+        .bg-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #102a43 0%, #050b1a 100%);
+            z-index: -1;
+        }
+
+        /* Header / Navigation */
         header {
-            background: linear-gradient(rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 0.9)); 
-            background-image:url('home_background.png');
-            background-size: cover;
-            background-position: center;
-            min-height: 60vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
             padding: 20px;
-            border-bottom: 3px solid var(--neon-blue);
+            background: rgba(5, 11, 26, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
         }
 
-        h1 {
-            font-size: clamp(2rem, 8vw, 4rem); /* Taille adaptative */
-            letter-spacing: 4px;
-            margin: 0;
-            color: var(--neon-blue);
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 300;
             text-transform: uppercase;
-            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            letter-spacing: 1px;
+            font-size: 0.9em;
+            transition: color 0.3s;
         }
 
-        .subtitle {
-            font-size: clamp(1rem, 4vw, 1.5rem);
-            color: var(--neon-red);
-            font-weight: bold;
-            margin-top: 10px;
-            text-transform: uppercase;
-        }
+        nav a:hover { color: var(--bleu-electrique); }
 
-        /* Container principal */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
+        /* Hero Section */
+        .hero {
+            text-align: center;
             padding: 40px 20px;
         }
 
-        h2 {
-            border-left: 4px solid var(--neon-red);
-            padding-left: 15px;
-            margin-bottom: 30px;
-            font-size: 1.8rem;
+        .logo-area {
+            margin-bottom: 20px;
         }
 
-        /* Grille Responsive */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+        .logo-area h1 {
+            font-size: 2.5em;
+            letter-spacing: 4px;
+            margin: 0;
+            text-transform: uppercase;
+            background: linear-gradient(to right, white, var(--bleu-electrique));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid #1e2a44;
-            padding: 25px;
-            border-radius: 12px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            display: flex;
-            flex-direction: column;
+        .hero h2 {
+            font-size: 1.5em;
+            color: var(--or-doux);
+            text-transform: uppercase;
+            font-weight: 300;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--neon-blue);
-            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.1);
+        /* Conteneur de la Carte SIG */
+        .map-container {
+            width: 90%;
+            max-width: 1100px;
+            height: 600px;
+            margin: 20px auto;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.1);
+            position: relative;
         }
 
-        .card h3 {
-            margin-top: 0;
-            color: var(--neon-blue);
+        #map {
+            width: 100%;
+            height: 100%;
+            background: #050b1a; /* Fond de carte noir */
         }
 
-        .card p {
-            color: var(--text-gray);
-            flex-grow: 1; /* Aligne les boutons en bas */
-        }
-
-        /* Boutons */
-        .btn {
-            display: inline-block;
-            background: transparent;
-            color: var(--neon-blue);
-            border: 2px solid var(--neon-blue);
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 6px;
+        /* Style des Tooltips Leaflet (Popups) */
+        .leaflet-tooltip-own {
+            background: rgba(0, 20, 40, 0.9) !important;
+            border: 1px solid var(--bleu-electrique) !important;
+            color: white !important;
+            border-radius: 5px;
             font-weight: bold;
-            text-align: center;
-            transition: all 0.3s ease;
-            margin-top: 15px;
         }
 
-        .btn:hover {
-            background: var(--neon-blue);
-            color: var(--dark-bg);
+        .btn-visite {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            border: 1px solid var(--bleu-electrique);
+            color: var(--bleu-electrique);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            background: rgba(0, 212, 255, 0.05);
         }
 
-        .footer {
-            text-align: center;
-            padding: 60px 20px;
-            border-top: 1px solid #1e2a44;
-            font-size: 0.9rem;
-            color: #4a5a78;
+        .btn-visite:hover {
+            background: var(--bleu-electrique);
+            color: var(--bleu-nuit);
+            box-shadow: 0 0 20px var(--bleu-electrique);
         }
 
-        /* Ajustements mobiles spécifiques */
-        @media (max-width: 600px) {
-            header { min-height: 40vh; }
-            .grid { grid-template-columns: 1fr; }
-        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>ENCYCLO-TRACK</h1>
-    <p class="subtitle">GÉOMATIQUE • HISTOIRE & MODÉLISME</p>
-    <p>La cartographique au service du sport automobile.</p>
-</header>
+    <div class="bg-overlay"></div>
 
-<div class="container">
-    <h2>Les Dossiers</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>les circuits dans le monde</h3>
-            <p>À travers cette rubrique, explorez les circuits actuels et les circuits oubliés du monde.</p>
-            <a href="map2.html" class="btn">Découvrir à travers la carte du monde les tracés</a>
+    <header>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">F1</a>
+            <a href="#">Rallye</a>
+            <a href="#">Endurance</a>
+            <a href="#">Civil</a>
+            <a href="#">Circuits</a>
+            <a href="#">Atelier</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="logo-area">
+            <h1>Le Musée Miniature</h1>
+            <h2>L'empreinte des légendes</h2>
+        </div>
+        <p style="color: var(--texte-gris); max-width: 600px; margin: 0 auto;">
+            Explorez notre collection à travers cette interface cartographique interactive.
+        </p>
+
+        <div class="map-container">
+            <div id="map"></div>
         </div>
 
-        <div class="card">
-            <h3>Atelier du modelisme Restore Model Cars </h3>
-            <p>Rejoignez-nous sur notre page Facebook pour découvrir nos modèles réduits et nos assemblages réalisés avec une grande qualité de finition.</p>
-            <a href="https://www.facebook.com/RestoreModelCars/" class="btn">Voir la Galerie FB</a>
-        </div>
+        <a href="#map" class="btn-visite">Exploration Interactive des Salles</a>
+    </section>
 
-        <div class="card">
-            <h3>Professeur Apex</h3>
-            <p>Découvrez le Professeur Apex, qui vous accompagnera tout au long de la visite du site.</p>
-            <a href="prof_apex" class="btn">Quelques infos?!</a>
-        </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // Initialisation du SIG Web
+        // On utilise L.CRS.Simple car c'est un plan de bâtiment, pas une carte du monde.
+        var map = L.map('map', {
+            crs: L.CRS.Simple,
+            minZoom: -1,
+            maxZoom: 2,
+            attributionControl: false
+        });
+
+        // Définition des dimensions du plan (en pixels)
+        var w = 1200, h = 800;
+        var url = 'https://via.placeholder.com/1200x800/050b1a/00d4ff?text=PLAN+DU+MUSEE+STRUCTURE+3D'; // Remplacez par votre image de plan
         
-        <div class="card">
-            <h3>A la une</h3>
-            <p>Suivez au fil du temps les mises à jour et nouveauté du site.</p>
-            <a href="maj.html" class="btn">En savoir plus</a>
-        </div>
-        <div class="card">
-            <h3>Contact</h3>
-            <p>Vous souhaitez plus d'information ou soumettre des idées c'est bien ici!</p>
-            <a href="contact.html" class="btn">Pas de contact possible pour le moment</a>
-        </div>
-        
-         <div class="card">
-            <h3>A propos</h3>
-            <p>Sans circuit la course n'est rien.</p>
-            <a href="about.html" class="btn">En savoir plus</a>
-        </div>
-    </div>
-</div>
+        var southWest = map.unproject([0, h], map.getMaxZoom()-1);
+        var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
+        var bounds = new L.LatLngBounds(southWest, northEast);
 
-<footer class="footer">
-    <p><strong>Encyclo-Track</strong> - Site conçu par un expert géomaticien passionné.</p>
-    <p>© 2026 - Tous droits réservés.</p>
-</footer>
+        // Ajout de l'image de fond
+        L.imageOverlay(url, bounds).addTo(map);
+        map.setMaxBounds(bounds);
+        map.fitBounds(bounds);
 
+        // Exemple de zones interactives (Salles)
+        var zones = [
+            { name: "Salle F1", color: "#ff0000", coords: [[-150, 100], [-150, 400], [-350, 400], [-350, 100]], link: "/f1" },
+            { name: "Zone Rallye", color: "#00ff00", coords: [[-150, 450], [-150, 750], [-350, 750], [-350, 450]], link: "/rallye" },
+            { name: "Atelier", color: "#ffa500", coords: [[-450, 800], [-450, 1100], [-650, 1100], [-650, 800]], link: "/atelier" }
+        ];
+
+        zones.forEach(function(zone) {
+            var poly = L.polygon(zone.coords, {
+                color: varProp('--bleu-electrique'),
+                fillColor: zone.color,
+                fillOpacity: 0.1,
+                weight: 2
+            }).addTo(map);
+
+            poly.bindTooltip(zone.name, {
+                permanent: false, 
+                direction: "center",
+                className: "leaflet-tooltip-own"
+            });
+
+            poly.on('mouseover', function() { this.setStyle({ fillOpacity: 0.4 }); });
+            poly.on('mouseout', function() { this.setStyle({ fillOpacity: 0.1 }); });
+            poly.on('click', function() { alert("Direction : " + zone.name); });
+        });
+
+        function varProp(name) {
+            return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+        }
+    </script>
 </body>
 </html>
+
