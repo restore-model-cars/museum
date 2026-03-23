@@ -3,192 +3,113 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Musée Miniature | L'empreinte des légendes</title>
+    <title>Model Cars Museum</title>
     <style>
-        /* Importation d'une police moderne */
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
-
-        :root {
-            --accent-blue: #00d4ff;
-            --text-gray: #a0adbd;
-            --dark-bg: #050b1a;
-        }
-
-        body, html {
+        body {
             margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--dark-bg);
-            color: white;
-            font-family: 'Rajdhani', sans-serif;
-            overflow: hidden; /* Empêche le scroll pour garder l'aspect application */
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
         }
 
-        /* Arrière-plan avec votre image générée */
-        .background-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* REMPLACEZ 'votre-image-sans-texte.jpg' PAR VOTRE FICHIER */
-            background: url('fond.jpg') no-repeat center center fixed;
-            background-size: cover;
-            z-index: -1;
-        }
-
-        /* Navigation */
         header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px 0;
-            position: relative;
-            z-index: 10;
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
 
         nav {
-            display: flex;
-            gap: 25px;
-            align-items: center;
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
         }
 
         nav a {
-            text-decoration: none;
             color: white;
-            font-size: 1.1em;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            opacity: 0.8;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         nav a:hover {
-            color: var(--accent-blue);
-            opacity: 1;
-            text-shadow: 0 0 10px var(--accent-blue);
+            color: #ffd700;
         }
 
-        .search-icon {
-            cursor: pointer;
-            font-size: 1.2em;
-            margin-left: 10px;
+        .hero {
+            text-align: center;
+            padding: 40px;
         }
 
-        /* Contenu Principal */
-        main {
-            padding-left: 8%;
-            padding-top: 5%;
-            max-width: 500px;
+        .hero img {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
         }
 
-        .logo-section {
-            margin-bottom: 40px;
+        .cta {
+            margin-top: 20px;
         }
 
-        .logo-section h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2em;
-            margin: 0;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .hero-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3em;
-            line-height: 1.1;
-            margin: 20px 0;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #fff, var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-description {
-            font-size: 1.2em;
-            color: var(--text-gray);
-            line-height: 1.6;
-            margin-bottom: 30px;
-            max-width: 450px;
-        }
-
-        /* Bouton Exploration */
-        .btn-exploration {
+        .cta a {
             display: inline-block;
-            padding: 15px 35px;
-            border: 1px solid var(--accent-blue);
+            padding: 12px 20px;
+            background-color: #222;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.1em;
-            background: rgba(0, 212, 255, 0.1);
-            backdrop-filter: blur(5px);
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
+            border-radius: 5px;
         }
 
-        .btn-exploration:hover {
-            background: var(--accent-blue);
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
-            transform: translateY(-2px);
+        .cta a:hover {
+            background-color: #555;
         }
 
-        /* Zones Interactives du Plan (SIG) */
-        /* Ces labels se placent par-dessus le plan de l'image */
-        .map-label {
-            position: absolute;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.8em;
-            color: var(--accent-blue);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            pointer-events: none;
+        footer {
+            margin-top: 40px;
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
         }
-
-        /* Positionnement approximatif basé sur votre image */
-        .label-f1 { top: 22%; left: 58%; }
-        .label-rallye { top: 28%; left: 75%; }
-        .label-endurance { top: 46%; left: 77%; }
-        .label-civil { top: 61%; left: 63%; }
-        .label-circuits { top: 78%; left: 73%; }
-
     </style>
 </head>
 <body>
 
-    <div class="background-container"></div>
+<header>
+    <h1>Model Cars Museum</h1>
+</header>
 
-    <header>
-        <nav>
-            <a href="#">A propos</a>
-            <a href="https://www.facebook.com/RestoreModelCars/">Facebook</a>
-            <a href="#">Contact</a>
-           
-        </nav>
-    </header>
+<nav>
+    <a href="#">Accueil</a>
+    <a href="#about">À propos</a>
+    <a href="https://facebook.com" target="_blank">Lien FB</a>
+</nav>
 
-    <main>
-        <div class="logo-section">
-            <h1>Le Musée Miniature</h1>
-        </div>
+<section class="hero">
+    <h2>Bienvenue dans le musée virtuel des voitures miniatures</h2>
 
-        <h2 class="hero-title">L'empreinte des légendes <br>en miniature</h2>
+    <!-- Image d'accueil -->
+    <img src="https://images.unsplash.com/photo-1583267746897-2cf415887172" alt="Musée virtuel voitures miniatures">
 
-        <p class="hero-description">
-            Découvrez une collection unique de voitures miniatures à travers une expérience cartographique immersive de notre musée virtuel.
-        </p>
+    <div class="cta">
+        <!-- Lien vers une carte SIG (exemple ArcGIS / OpenStreetMap) -->
+        <a href="https://www.arcgis.com/apps/webappviewer/index.html" target="_blank">
+            Accéder à la carte interactive du musée (SIG)
+        </a>
+    </div>
+</section>
 
-        <a href="#" class="btn-exploration">Exploration Interactive des Salles</a>
-    </main>
+<section id="about" style="padding:40px; text-align:center;">
+    <h2>À propos</h2>
+    <p>
+        Ce musée virtuel présente une collection unique de voitures miniatures.
+        Explorez les différentes salles via notre carte interactive SIG et découvrez
+        des modèles rares et historiques.
+    </p>
+</section>
 
-    <div class="map-label label-f1">Salle F1</div>
-    <div class="map-label label-rallye">Zone Rallye</div>
-    <div class="map-label label-endurance">Galerie Endurance</div>
-    <div class="map-label label-civil">Salon Civil</div>
-    <div class="map-label label-circuits">Circuits Célèbres</div>
+<footer>
+    <p>&copy; 2026 Model Cars Museum - Tous droits réservés</p>
+</footer>
+
 </body>
 </html>
- 
