@@ -1,80 +1,133 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Ma Carte Interactive</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0b1a2f; /* bleu nuit */
+            color: #ffffff;
+        }
 
-<title>Model Cars Museum</title>
+        header {
+            background-color: #102542;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-<style>
+        header h1 {
+            margin: 0;
+        }
 
-body{
-margin:0;
-font-family:Arial;
-background:#050910;
-color:white;
-text-align:center;
-}
+        .btn-accueil {
+            background-color: #1e3a5f;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
 
-/* TITRE */
+        .btn-accueil:hover {
+            background-color: #2e5c8a;
+        }
 
-h1{
-padding:20px;
-}
-/* bouton */
+        .container {
+            display: flex;
+            height: calc(100vh - 140px);
+        }
 
-.button{
-position:absolute;
-font-size:12px
-top:50px;
-right:50px;
-padding:10px 30px;
-border:2px solid white;
-border-radius:30px;
-text-decoration:none;
-color:white;
-transition:0.3s;
-}
- button:hover{
-background:white;
-color:black;
-}
+        .sidebar {
+            width: 250px;
+            background-color: #102542;
+            padding: 15px;
+            overflow-y: auto;
+        }
 
-/* FENETRE */
+        .map-container {
+            position: relative;
+            flex: 1;
+        }
 
-.container{
-width:90%;
-height:80vh;
-margin:auto;
-border:2px solid #2bc4ff;
-border-radius:10px;
-overflow:hidden;
-}
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
-/* IFRAME */
+        /* Points cliquables sur la carte */
+        .point {
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
 
-iframe{
-width:80%;
-height:100%;
-border:none;
-}
+        .point a {
+            background-color: #4da6ff;
+            color: white;
+            padding: 5px 8px;
+            text-decoration: none;
+            border-radius: 50%;
+            font-size: 12px;
+        }
 
-</style>
+        .point a:hover {
+            background-color: #80c1ff;
+        }
 
+        footer {
+            background-color: #102542;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
-<p><a href="index.html"style="color:white;"<a class="button" >accueil</a></p>
-<h1>Bienvenue au museée</h1>
-<p>Parcourez le plan interactif : en zoomant sur les salles, les points d’exposition des voitures apparaissent, regroupés par marque ou par catégorie. Chaque véhicule est associé à une fiche technique détaillée.</p>
-<p>À l’aide du bouton « Search », saisissez une marque ou une catégorie afin de la localiser dans le musée.</p>
+
+<header>
+    <h1>Titre de la carte</h1>
+    <button class="btn-accueil" onclick="alert('Retour accueil')">Accueil</button>
+</header>
+
 <div class="container">
 
-<iframe src="map.html"></iframe>
+    <div class="sidebar">
+        <h2>Didacticiel</h2>
+        <p>
+            - Cliquez sur les points pour accéder aux informations.<br>
+            - Naviguez dans la carte interactive.<br>
+            - Ajoutez vos propres repères.
+        </p>
+    </div>
+
+    <div class="map-container">
+        <!-- Intégration carte QGIS -->
+        <iframe src="map.html"></iframe>
+
+        <!-- Points cliquables (exemples) -->
+        <div class="point" style="top: 40%; left: 50%;">
+            <a href="https://example.com" target="_blank">1</a>
+        </div>
+
+        <div class="point" style="top: 60%; left: 30%;">
+            <a href="https://example.com" target="_blank">2</a>
+        </div>
+
+        <div class="point" style="top: 70%; left: 70%;">
+            <a href="https://example.com" target="_blank">3</a>
+        </div>
+
+    </div>
 
 </div>
 
-</body>
+<footer>
+    <p>© 2026 - Mon projet cartographique</p>
+</footer>
 
+</body>
 </html>
