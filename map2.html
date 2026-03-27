@@ -1,132 +1,172 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Ma Carte Interactive</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0b1a2f; /* bleu nuit */
-            color: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotspots interactifs</title>
 
-        header {
-            background-color: #102542;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
-        header h1 {
-            margin: 0;
-        }
+/* HEADER */
+header {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+}
 
-        .btn-accueil {
-            background-color: #1e3a5f;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+/* ZONE IMAGE */
+.main {
+    position: relative;
+    height: 70vh;
+    background: url('https://images.unsplash.com/photo-1511919884226-fd3cad34687c') center/cover no-repeat;
+    overflow: hidden;
+}
 
-        .btn-accueil:hover {
-            background-color: #2e5c8a;
-        }
+/* HOTSPOTS */
+.hotspot {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    cursor: grab;
+    transform: translate(-50%, -50%);
+}
 
-        .container {
-            display: flex;
-            height: calc(100vh - 140px);
-        }
+.hotspot img {
+    width: 100%;
+    height: 100%;
+}
 
-        .sidebar {
-            width: 250px;
-            background-color: #102542;
-            padding: 15px;
-            overflow-y: auto;
-        }
+/* INFOBULLE */
+.tooltip {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    transition: 0.2s;
+}
 
-        .map-container {
-            position: relative;
-            flex: 1;
-        }
+.hotspot:hover .tooltip {
+    opacity: 1;
+}
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
 
-        /* Points cliquables sur la carte */
-        .point {
-            position: absolute;
-            transform: translate(-50%, -50%);
-        }
-
-        .point a {
-            background-color: #4da6ff;
-            color: white;
-            padding: 5px 8px;
-            text-decoration: none;
-            border-radius: 50%;
-            font-size: 12px;
-        }
-
-        .point a:hover {
-            background-color: #80c1ff;
-        }
-
-        footer {
-            background-color: #102542;
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    header {
+        font-size: 18px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Carte du musée</h1>
-    <button class="btn-accueil" onclick="alert('Retour accueil')">Accueil</button>
+    Model Cars Museum
 </header>
 
-<div class="container">
+<div class="main" id="zone">
 
-    <div class="sidebar">
-        <h2>Didacticiel</h2>
-        <p>
-            - Cliquez sur les points pour accéder aux informations.<br>
-            - Naviguez dans la carte interactive.<br>
-                 </p>
+    <!-- 8 HOTSPOTS -->
+    <!-- Tu peux changer les positions (top/left) -->
+
+    <div class="hotspot" style="top:20%; left:30%;">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+        <div class="tooltip">Voiture 1</div>
     </div>
 
-    <div class="map-container">
-        <!-- Intégration carte QGIS -->
-        <iframe src="map.html"></iframe>
+    <div class="hotspot" style="top:40%; left:50%;">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+        <div class="tooltip">Voiture 2</div>
+    </div>
 
-        <!-- Points cliquables (exemples) -->
-        <div class="point" style="top: 40%; left: 50%;">
-            <a href="https://example.com" target="_blank">1</a>
-        </div>
+    <div class="hotspot" style="top:60%; left:20%;">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+        <div class="tooltip">Voiture 3</div>
+    </div>
 
-        <div class="point" style="top: 60%; left: 30%;">
-            <a href="https://example.com" target="_blank">2</a>
-        </div>
+    <div class="hotspot" style="top:30%; left:70%;">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+        <div class="tooltip">Voiture 4</div>
+    </div>
 
-        <div class="point" style="top: 70%; left: 70%;">
-            <a href="https://example.com" target="_blank">3</a>
-        </div>
+    <div class="hotspot" style="top:50%; left:80%;">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+        <div class="tooltip">Voiture 5</div>
+    </div>
 
+    <div class="hotspot" style="top:70%; left:60%;">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+        <div class="tooltip">Voiture 6</div>
+    </div>
+
+    <div class="hotspot" style="top:80%; left:40%;">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+        <div class="tooltip">Voiture 7</div>
+    </div>
+
+    <div class="hotspot" style="top:25%; left:15%;">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+        <div class="tooltip">Voiture 8</div>
     </div>
 
 </div>
 
 <footer>
-    <p>© 2026 - Mon projet cartographique</p>
+    © 2026 - Carte du Musée
 </footer>
+
+<script>
+// DRAG & DROP DES HOTSPOTS
+const hotspots = document.querySelectorAll('.hotspot');
+
+hotspots.forEach(hotspot => {
+    let isDragging = false;
+
+    hotspot.addEventListener('mousedown', () => {
+        isDragging = true;
+        hotspot.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        hotspot.style.cursor = 'grab';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+
+        const parent = document.getElementById('zone');
+        const rect = parent.getBoundingClientRect();
+
+        let x = ((e.clientX - rect.left) / rect.width) * 100;
+        let y = ((e.clientY - rect.top) / rect.height) * 100;
+
+        hotspot.style.left = x + "%";
+        hotspot.style.top = y + "%";
+    });
+});
+</script>
 
 </body>
 </html>
