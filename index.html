@@ -1,111 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>MODEL CARS MUSEUM</title>
-
-  <style>
-    /* Conteneur image */
-    .container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      background-image: url("musée.png");
-      background-size: cover;
-      background-position: center;
-    }
-    /* HEADER */
-header {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 24px;
-    font-family: Arial bold, sans-serif;
-  
-}
-
-    /* Style général des boutons */
-    .btn {
-      position: absolute;
-      padding: 12px 20px;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background-color: rgba(255, 255, 255, 0.8);
-      color: black;
-    }
-
-    /* Positions personnalisées */
-    .btn1 {
-      top: 50%;
-      left: 30%;
-    }
-
-    .btn2 {
-      top: 70%;
-      left: 20%;
-    }
-
-    .btn3 {
-      top: 55%;
-      left: 60%;
-    }
-      
-    .btn4 {
-      top: 35%;
-      left: 30%;
-    }
-      
-    .btn5 {
-      top: 35%;
-      left: 60%;
-    }
-      
-    .btn6 {
-      top: 75%;
-      left: 70%;
-    }
-      
-    .btn7 {
-      top: 35%;
-      left: 80%;
-    }
-      
-    .btn8 {
-      top: 0%;
-      left: 10%;
-    }
-     
-    .btn9 {
-      top: 0%;
-      left: 90%;
-    }
-     .btn10 {
-      top: 0%;
-      left: 70%;
-    }
-    /* FOOTER */
-footer {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
-  </style>
-</head>
-
-<body>
-  <header>
-    Model Cars Museum
-</header>
-<div class="image-zone"></div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Model Cars Museum</title>
 
 <style>
 body {
@@ -113,22 +11,107 @@ body {
     font-family: Arial, sans-serif;
 }
 
-  <div class="container">
+/* HEADER */
+header {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
-    <a href="page1.html" class="btn btn1">Salle des Formule 1</a>
-    <a href="page2.html" class="btn btn2">Le monde du Rally</a>
-    <a href="page3.html" class="btn btn3">Le mythe de l'endurance</a>
-     <a href="page4.html" class="btn btn4">Le rêve des supercars</a>
-    <a href="page5.html" class="btn btn5">L'ateliers</a>
-    <a href="track.html" class="btn btn6">Les Circuits légendaires</a>
-    <a href="page7.html" class="btn btn7">Pour les grands enfants</a>
-    <a href="about.html" class="btn btn8">A Propos</a>
-    <a href="prof_apex.html" class="btn btn9">Le professeur Apex</a>
-    <a href="fb.html" class="btn btn10">Restore Model Cars</a>
+/* MENU */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: #222;
+    padding: 15px;
+}
 
-  </div>
-  <footer>
-    © 2026 - modelcars museum droits réservés
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #e10600;
+}
+
+/* IMAGE */
+.image-zone {
+    position: relative;
+    height: 70vh;
+    background: url('https://images.unsplash.com/photo-1511919884226-fd3cad34687c') center/cover no-repeat;
+}
+
+/* BOUTONS */
+.btn {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 10px 15px;
+    background: rgba(0,0,0,0.75);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e10600;
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Model Cars Museum</h1>
+</header>
+
+<nav class="menu">
+    <a href="#">À propos</a>
+    <a href="#">Facebook</a>
+    <a href="#">Professeur Apex</a>
+</nav>
+
+<div class="image-zone">
+
+    <!-- 10 BOUTONS FIXES -->
+    <a href="#" class="btn" style="top:10%; left:15%;">F1</a>
+    <a href="#" class="btn" style="top:20%; left:50%;">Circuit</a>
+    <a href="#" class="btn" style="top:30%; left:80%;">Rally</a>
+    <a href="#" class="btn" style="top:40%; left:25%;">Endurance</a>
+    <a href="#" class="btn" style="top:50%; left:60%;">Routiére</a>
+    <a href="#" class="btn" style="top:60%; left:10%;">Ateliers</a>
+    <a href="#" class="btn" style="top:70%; left:40%;">Legos</a>
+    <a href="#" class="btn" style="top:80%; left:75%;">?</a>
+    <a href="#" class="btn" style="top:35%; left:65%;">?</a>
+    <a href="#" class="btn" style="top:75%; left:30%;">?</a>
+
+</div>
+
+<footer>
+    © 2026 - Model cars Museum | Projet personnel
 </footer>
 
 </body>
