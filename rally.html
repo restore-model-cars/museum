@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Salle Rallye</title>
+
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .container img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Bouton rallye */
+    .rallye {
+      position: absolute;
+      top: 65%;   /* ajuste ici */
+      left: 10%;  /* ajuste ici */
+      width: 25%; /* taille zone */
+      height: 25%;
+      
+      /* debug visuel (tu peux enlever après) */
+      background-color: rgba(255, 0, 0, 0.2);
+      border: 2px solid red;
+      
+      cursor: pointer;
+    }
+
+    .rallye:hover {
+      background-color: rgba(255, 0, 0, 0.4);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <img src="musee.png" alt="musée">
+
+  <a href="rallye.html" class="rallye"></a>
+</div>
+
+</body>
+</html>
