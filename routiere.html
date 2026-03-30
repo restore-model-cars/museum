@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les voitures d'exceptions</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+    background: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    }
+
+/* MENU */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: #000000;
+    padding: 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #e10600;
+}
+
+/* IMAGE */
+.image-zone {
+    position: relative;
+    height: 70vh;
+    background: url('endurance.png') center/cover no-repeat;
+}
+
+/* BOUTONS */
+.btn {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 10px 15px;
+    background: rgba(0,0,0,0.75);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e10600;
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1></h1>
+    <img
+  src="logos.png"
+    width="300"
+  height="150" />
+</header>
+
+<nav class="menu">
+    <a href="index.html">Accueil</a>
+    
+    <a href="prof_apex_routiere.html">Professeur Apex</a>
+</nav>
+
+<div class="image-zone">
+
+    <!--  BOUTONS FIXES -->
+    <a href="routiere_folles.html" class="btn" style="top:10%; left:10%;">Les années folles</a>
+    <a href="routiere_muscles.html" class="btn" style="top:20%; left:10%;">Les Muscles cars</a>
+    <a href="routiere_tokyo.html" class="btn" style="top:30%; left:10%;">Tokyo drift!</a>
+    <a href="routiere_ferrari.html" class="btn" style="top:40%; left:10%;">El cavalino</a>
+    <a href="routiere_reve.html" class="btn" style="top:50%; left:10%;">Voitures de rêves</a>
+    
+        
+</div>
+
+<footer>
+    © 2026 - Model cars Museum 
+</footer>
+
+</body>
+</html>
