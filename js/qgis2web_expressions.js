@@ -754,3 +754,43 @@ function fnc__specialcol_(values, context) {
 function fnc_project_color(values, context) {
     return false;
 };
+
+
+
+function exp_track_lincopie_1rule0_eval_expression(context) {
+    // "date fin" IS NOT NULL
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return (feature.properties['date fin']  !== null);
+    } else {
+        return (feature['date fin']  !== null);
+    }
+}
+
+
+function exp_track_lincopie_1rule1_eval_expression(context) {
+    // "date fin" IS NULL AND secteur IS NOT NULL
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.properties['date fin']  === null) && (feature.properties['secteur']  !== null));
+    } else {
+        return ((feature['date fin']  === null) && (feature['secteur']  !== null));
+    }
+}
+
+
+function exp_track_lincopie_1rule2_eval_expression(context) {
+    // 
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return null;
+    } else {
+        return null;
+    }
+}

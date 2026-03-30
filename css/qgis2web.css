@@ -195,3 +195,32 @@
             justify-content: center;
             align-items: center;
         }
+        .leaflet-control-layers-expanded .leaflet-control-layers-toggle {
+            display: none;
+        }
+        .css_track_pct_3 {
+            text-shadow: -2px -2px 0 #05174a,
+                -2px -1px 0 #05174a,
+                -2px 0px 0 #05174a,
+                -2px 1px 0 #05174a,
+                -2px 2px 0 #05174a,
+                -1px -2px 0 #05174a,
+                -1px -1px 0 #05174a,
+                -1px 0px 0 #05174a,
+                -1px 1px 0 #05174a,
+                -1px 2px 0 #05174a,
+                0px -2px 0 #05174a,
+                0px -1px 0 #05174a,
+                0px 1px 0 #05174a,
+                0px 2px 0 #05174a,
+                1px -2px 0 #05174a,
+                1px -1px 0 #05174a,
+                1px 0px 0 #05174a,
+                1px 1px 0 #05174a,
+                1px 2px 0 #05174a,
+                2px -2px 0 #05174a,
+                2px -1px 0 #05174a,
+                2px 0px 0 #05174a,
+                2px 1px 0 #05174a,
+                2px 2px 0 #05174a;
+        }
