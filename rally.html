@@ -1,54 +1,114 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Salle Rallye</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le monde du Rally</title>
 
-  <style>
-    body {
-      margin: 0;
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+    background: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px;
     }
 
-    .container {
-      position: relative;
-      width: 100%;
-      max-width: 1200px;
-      margin: auto;
-    }
+/* MENU */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: #000000;
+    padding: 15px;
+}
 
-    .container img {
-      width: 100%;
-      display: block;
-    }
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-    /* Bouton rallye */
-    .rallye {
-      position: absolute;
-      top: 65%;   /* ajuste ici */
-      left: 10%;  /* ajuste ici */
-      width: 25%; /* taille zone */
-      height: 25%;
-      
-      /* debug visuel (tu peux enlever après) */
-      background-color: rgba(255, 0, 0, 0.2);
-      border: 2px solid red;
-      
-      cursor: pointer;
-    }
+.menu a:hover {
+    color: #e10600;
+}
 
-    .rallye:hover {
-      background-color: rgba(255, 0, 0, 0.4);
+/* IMAGE */
+.image-zone {
+    position: relative;
+    height: 70vh;
+    background: url('rally.png') center/cover no-repeat;
+}
+
+/* BOUTONS */
+.btn {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 10px 15px;
+    background: rgba(0,0,0,0.75);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e10600;
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
     }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-<div class="container">
-  <img src="musee.png" alt="musée">
+<header>
+    <h1></h1>
+    <img
+  src="logos.png"
+    width="300"
+  height="150" />
+</header>
 
-  <a href="rallye.html" class="rallye"></a>
+<nav class="menu">
+    <a href="index.html">Accueil</a>
+    
+    <a href="prof_apex_rally.html">Professeur Apex</a>
+</nav>
+
+<div class="image-zone">
+
+    <!-- 10 BOUTONS FIXES -->
+    <a href="rally_renault.html" class="btn" style="top:60%; left:35%;">F1</a>
+    <a href="rally_alpine.html" class="btn" style="top:30%; left:40%;">Circuit</a>
+        
 </div>
+
+<footer>
+    © 2026 - Model cars Museum 
+</footer>
 
 </body>
 </html>
