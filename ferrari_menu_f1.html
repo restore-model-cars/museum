@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Formule 1</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+    background: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    }
+
+/* MENU */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: #000000;
+    padding: 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #e10600;
+}
+
+/* IMAGE */
+.image-zone {
+    position: relative;
+    height: 70vh;
+    background: url('f1.png') center/cover no-repeat;
+}
+
+/* BOUTONS */
+.btn {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 10px 15px;
+    background: rgba(0,0,0,0.75);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e10600;
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1></h1>
+    <img
+  src="logos.png"
+    width="300"
+  height="150" />
+</header>
+
+<nav class="menu">
+    <a href="ferrari_f1_50-69.html">De 1950 à 1969</a>
+    <a href="ferrari_f1_70-89.html">De 1970 à 1989</a>
+    <a href="ferrari_f1_90-2009">De 1990 à 2009</a>
+   <a href="ferrari_f1_2010-now">De 2010 à Aujourd'hui</a>
+ 
+</nav>
+
+<footer>
+    © 2026 - Model cars Museum 
+</footer>
+
+</body>
+</html>
