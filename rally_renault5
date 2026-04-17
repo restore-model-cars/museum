@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Renault Rally </title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#050910;
+color:white;
+margin:0;
+}
+
+header{
+padding:20px;
+text-align:center;
+background:#0c1420;
+font-size:28px;
+}
+
+section{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+h2{
+border-bottom:2px solid #2bc4ff;
+padding-bottom:10px;
+margin-bottom:30px;
+}
+/* bouton */
+
+.button{
+position:absolute;
+font-size:12px
+top:50px;
+right:50px;
+padding:10px 30px;
+border:2px solid white;
+border-radius:30px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+ button:hover{
+background:white;
+color:black;
+}
+ /* bouton2 */
+
+.button2{
+position:left;
+font-size:12px
+top:50px;
+right:50px;
+padding:10px 30px;
+border:2px solid white;
+border-radius:30px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+ button:hover{
+background:white;
+color:black;
+}
+
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.card{
+background:#0c1420;
+padding:20px;
+border-radius:8px;
+}
+
+img{
+width:100%;
+border-radius:6px;
+}
+
+@media (max-width:800px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+Renault en Rally
+</header>
+<p><a href="index.html"style="color:white;"<a class="button" >accueil</a></p>
+<p><a href="rally.html"style="color:white;"<a class="button2" >retour au Showroom</a></p>
+<section>
+
+<h2>Identification</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<p><b>Marque: </b> RENAULT</p>
+<p><b>Pays:</b> France</p>
+<p><b>Date du 1 er Rally:</b> 1950 GP de Monaco </p>
+<p><b>Palmares: </b> 1125 GP </p>
+ <p>77 Saisons </p>
+ <p>248 Victoires </p>
+ <p>254 Poles positions </p>
+ <p>265 Meilleurs tours</p>
+ <p>1125 GP </p>
+ <p>839 Podiums </p> 
+ <p>87 Doublés </p>
+<img src="Ferrari.png">
+
+</section>
+
+<section>
+
+<h2>Les Modéles de 1950 à 1959</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>125-1950</h3>
+<img src="F125-1950.jpeg">
+<img src="F125-1950-2.jpeg">
+<p>Arrivé au GP de Monaco pour la 2éme Manche du Premier championnat du mond de Formule 1 Ferrari réalisera son 1er podium grace a Alberto Ascari qui finira 5éme au championnat, à cette epoque il n'y avait pas de classement constructeur.</p>
+<p>Moteur: V12 Bi-compresseur 1496 cm³, 260 Ch à 7500tr/Mn, 5 vitesses, poids 700kg</p> 
+<p>Modéle presenté: Nous sommes à la recherche du 1/43</p> 
+</div>
+ 
+ <div class="card">
+<h3>275-1950</h3>
+<img src="F275-1950.jpeg">
+<img src="F275-1950-2.jpeg">
+<p>Remplacante de la 125 lors de la saison 1950 pour le GP de Belgique et de France la 275 aura une carriére trés courte avec un manque de résultat 5 éme en Belgique et abandon en France.</p>
+<p>Moteur: V12 Bi-compresseur 3322 cm³, 300 Ch à 7300tr/Mn, 5 vitesses, poids 850kg</p> 
+<p>Modéle presenté:Edition Fabbri echelle 1/43 version GP de Belgique 5éme,#4 Alberto Ascari <br> 
+</div>
+
+ <div class="card">
+ <h3>375-1951</h3>
+<img src="F375-1951.jpeg">
+<p>Face à Juan Manuel Fangio (Alfa Romeo), Ascari finira 2éme du championnat laissant le titre au futur quintuple Champion Argentin</p>
+<p>Moteur: V12 4500 cm³, 350 Ch à 7000tr/min , 4 vitesses, poids 560kg</p>
+<p>Modéles presentés:Nous sommes à la recherche du 1/43</a></p>
+</div>
+
+ <div class="card">
+ <h3>500F2-1952</h3>
+<img src="F500-1950.jpeg">
+<p>Taillée pour la réglementation F2 la 500 remporta 6/8 GP de la saison F1 avec à son volant Alberto Ascari, 1er titre Pilote avec Ferrari </p>
+<p>Moteur: 4cylclindre en ligne 1984 cm³, 185 Ch à 7000tr/Mn, 4 vitesses, poids 560kg</p>
+<p>Modéles presentés: Edition Fabbri echelle 1/43 version GP d'Allemagne 1er,#101 Alberto Ascari <br> Polistil 1/18 réstauré et amélioré, Figurine Ascari <a href="atelier_f500.html"style="color:white;">(voir atelier)</a></p>
+</div>
+
+ <div class="card">
+ <h3>553-1953</h3>
+<img src="F553-1953.jpeg">
+<p>Doublé mondiale pour Ascari mais ferrari place a la 3éme place du podium le tout 1er champion du mond ede l'histoire de la F1 :Farina </p>
+<p>Moteur: 4cylclindre en ligne 2497 cm³, 260 Ch à 7800tr/Mn, 4 vitesses, poids 590kg</p>
+<p>Modéles presentés: Nous sommes à la recherche du 1/43</p>
+</div>
+
+ <div class="card">
+ <h3>625-1954</h3>
+<img src="F25-1954.jpeg">
+<p>Gonzales et Hawthorn finiront 2éme et 3éme du championnat, Juan Manuel Fangio s'offira son 2éme sacre à égalité avec Ascari  </p>
+<p>Moteur: 4cylclindre en ligne 2498 cm³, 250 Ch à 7200tr/Mn, 4 vitesses, poids 600kg</p>
+<p>Modéles presentés: Nous sommes à la recherche du 1/43</p>
+</div>
+
+ <div class="card">
+ <h3>555-1955</h3>
+<img src="F555-1955.jpeg">
+<p>Saison plus compliqué le 1er pilote Ferrari sera Eugenio Castellotti qui finira 3éme en partageant la saison avec Lancia </p>
+<p>Moteur: 4cylclindre en ligne 2497 cm³, 250 Ch à 7200tr/Mn, 5 vitesses, poids 590kg</p>
+<p>Modéles presentés: Edition Fabbri echelle 1/43 version GP d'Italie 3éme ,#4 Eugenio Castellotti</p>
+
+</div>
+
+ <div class="card">
+ <h3>D50-1956</h3>
+<img src="FD50-1956.jpeg">
+<p>Suite au retrait de Lancia , Ferrari récupere tout les chassis et estampille la D50 . Et ainsi permet a Juan Manuel Fangio d'etablir un 1er record de 3 Titre mondiaux </p>
+<p>Moteur: V8 2485 cm³, 260 Ch à 8200tr/Mn, 5 vitesses, poids 640kg</p>
+<p>Modéles presentés: Edition Fabbri echelle 1/43 version GP d'Allemagne 1er,# Juan Manuel Fangio</p>
+</div>
+ 
+
+ <div class="card">
+  <h3>801-1957</h3>
+<img src="F801-1957.jpeg">
+<p>pour la 6éme fois consecutive un pilote Ferrari fini sur le podium du championnat avec Luigi Musso, Fangio continura son record avec 4 titres </p>
+<p>Moteur: V8 2485 cm³, 275 Ch à 8400tr/Mn, 5 vitesses, poids 650kg</p>
+<p>Modéles presentés: Nous sommes à la recherche du 1/43</p>
+<p></p>
+
+</div>
+
+ <div class="card">
+  <h3>D246-1958</h3>
+<img src="FD246-1958.jpeg">
+<p>1958 1er titre de champion constructeur est mis en place, Ferrari devient la première écurie sacrée, le titre pilote sera également pour Ferrari avec Mike Hawthorn</p>
+<p>Moteur: V6 2417 cm³, 275 Ch à 8500tr/Mn, 4 vitesses, poids 575kg</p>
+<p>Modéles presentés: Edition Fabbri echelle 1/43 version GP d'Argentine 2éme,#16 Luigi Musso</p>
+
+</div>
+
+ <div class="card">
+  <h3>D256-1959</h3>
+<img src="FD256-1959.jpeg">
+<p>fin de la 1er decenie de F1 Ferrari finira sa recolte avec une 2éme place constructeur et pilote Tony Brooks</p>
+<p>Moteur: V6 2474 cm³, 295 Ch à 8600tr/Mn, 5 vitesses, poids 560kg</p>
+<p>Modéles presentés: Nous sommes à la recherche du 1/43</p>
+
+</div>
+
+</section>
+</body>
+
+</html>
