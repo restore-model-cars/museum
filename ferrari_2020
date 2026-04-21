@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ferrari F1 2020-2029</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#050910;
+color:white;
+margin:0;
+}
+
+header{
+padding:20px;
+text-align:center;
+background:#0c1420;
+font-size:28px;
+}
+
+section{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+h2{
+border-bottom:2px solid #2bc4ff;
+padding-bottom:10px;
+margin-bottom:30px;
+}
+/* bouton */
+
+.button{
+position:absolute;
+font-size:12px
+top:50px;
+right:50px;
+padding:10px 30px;
+border:2px solid white;
+border-radius:30px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+ button:hover{
+background:white;
+color:black;
+}
+ /* bouton2 */
+
+.button2{
+position:left;
+font-size:12px
+top:50px;
+right:50px;
+padding:10px 30px;
+border:2px solid white;
+border-radius:30px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+ button:hover{
+background:white;
+color:black;
+}
+
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.card{
+background:#0c1420;
+padding:20px;
+border-radius:8px;
+}
+
+img{
+width:100%;
+border-radius:6px;
+}
+
+@media (max-width:800px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+Ferrari F1 de 2020 à 2029
+</header>
+<p><a href="index.html"style="color:white;"<a class="button" >accueil</a></p>
+<p><a href="ferrari_menu_f1.html"style="color:white;"<a class="button2" >retour au Showroom</a></p>
+<section>
+
+<h2>Identification</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<p><b>Marque: </b> FERRARI</p>
+<p><b>Pays:</b> Italie</p>
+<p><b>Date du 1 er GP:</b> 1950 GP de Monaco </p>
+<p><b>Palmares: </b> 1125 GP </p>
+ <p>77 Saisons </p>
+ <p>248 Victoires </p>
+ <p>254 Poles positions </p>
+ <p>265 Meilleurs tours</p>
+ <p>1125 GP </p>
+ <p>839 Podiums </p> 
+ <p>87 Doublés </p>
+<img src="Ferrari.png">
+
+</section>
+
+<section>
+
+<h2>Les Modéles de 2020 à 2029</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>SF1000-2020</h3>
+<img src="FSF1000-2010.jpeg">
+<p>Saison décevente avec une 6éme place le plus mauvais resultat depuis 1980, S.Vettel P13, C.Leclerc P8</p>
+<p>Moteur:  V6 1600 cm³, 914 Ch à 15000tr/Mn, 8 vitesses,  poids 620kg</p> 
+<p>Modéle presenté:Bburago #16 C.Leclerc 1/43</p> 
+</div>
+ 
+ <div class="card">
+<h3>F150-2021</h3>
+<img src="F150-2021.jpeg">
+<p>Carlos Sainz est recruté pour la saison 2021 a la place S.Vettel Ferrari remonte a la 3éme place , C.Sainz P5, C.Leclerc P7</p>
+<p>Moteur:  V6 1600 cm³, 914Ch à 15000tr/Mn, 8 vitesses,  poids 752kg</p> 
+<p>Modéle presenté:Bburago #16 C.Leclerc 1/43<br> 
+</div>
+
+  <div class="card">
+ <h3>F1-75-2022</h3>
+<img src="F1-75-2022.jpeg">
+<p>Malgré une belle saison Charle sLeclerc ne peut se battre contre M.Verstappen qui remportera son 2éme titre, C.Leclerc P2, C.Sainz P5 </p>
+<p>Moteur:  V6 1600 cm³, 914 Ch à 15000tr/Mn, 8 vitesses,  poids 795kg</p>
+<p>Modéle presenté:Bburago #55 C.Sainz 1/43</p>
+</div>
+
+ <div class="card">
+ <h3>SF23-2023</h3>
+<img src="F2003GA-2003.jpeg">
+<p>le rêve du titre continue à rester intouchable P3 constructeur.Le français Frederic Vasseur prend la direction à la place de M.Binotto,  C.Leclerc P5, C.Sainz P7</p>
+<p>Moteur:  V6 1600 cm³, 914 Ch à 15000tr/Mn, 8 vitesses,  poids 798kg</p>
+<p>Modéle presenté:Bburago #16 C.Leclerc 1/43</p>
+</div>
+
+<div class="card">
+ <h3>F14T-2024-</h3>
+<img src="F14T-2024.jpeg">
+<p>Mc laren met fin à la domination de Red Bull, Ferrari sera en arbitre de la bataille et prendra la 2éme place C.Leclerc P5, C.Sainz P7   </p>
+<p>Moteur: V6 1600 cm³, 914 Ch à 15000tr/Mn, 7 vitesses, poids 798kg</p>
+<p>Modéle presenté:Bburago #16 C.Leclerc 1/43</p>
+</div>
+
+ <div class="card">
+ <h3>SF25-2025</h3>
+<img src="SF25-2025.jpeg">
+<p>transfert du siécle Hamilton 7x Champion du monde l'égale d'un certain M.Schumacher arrive a Maranello. 1er saison compliqué P4 constructeur  C.Leclerc P5, L.Hamilton P6 </p>
+<p>Moteur:  V6 1600 cm³, 914 Ch à 15000tr/Mn, 8 vitesses, poids 800kg</p>
+<p>Modéle presenté:nous sommes à la recherche de ce modele 1/43</p>
+</div>
+
+ <div class="card">
+ <h3>F16-H-2026</h3>
+<img src="F16-H-2016.jpeg">
+<p>Nouvelle d'hybridation et changement totale de réglement le debut de saison est dominé par Mercedes mais Ferrari n'et pas loin derrière.   </p>
+<p>Moteur:  V6 1600 cm³, 952 Ch à 15000tr/Mn, 8 vitesses, poids 770kg</p>
+<p>>Modéle presenté:nous sommes à la recherche de ce modele 1/43</p>
+</div>
+
+</section>
+</body>
+
+</html>
