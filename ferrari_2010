@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ferrari F1 2010-2019</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#050910;
+color:white;
+margin:0;
+}
+
+header{
+padding:20px;
+text-align:center;
+background:#0c1420;
+font-size:28px;
+}
+
+section{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+h2{
+border-bottom:2px solid #2bc4ff;
+padding-bottom:10px;
+margin-bottom:30px;
+}
+/* bouton */
+
+.button{
+position:absolute;
+font-size:12px
+top:50px;
+right:50px;
+padding:10px 30px;
+border:2px solid white;
+border-radius:30px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+ button:hover{
+background:white;
+color:black;
+}
+ /* bouton2 */
+
+.button2{
+position:left;
+font-size:12px
+top:50px;
+right:50px;
+padding:10px 30px;
+border:2px solid white;
+border-radius:30px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+ button:hover{
+background:white;
+color:black;
+}
+
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.card{
+background:#0c1420;
+padding:20px;
+border-radius:8px;
+}
+
+img{
+width:100%;
+border-radius:6px;
+}
+
+@media (max-width:800px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+Ferrari F1 de 2010 à 2019
+</header>
+<p><a href="index.html"style="color:white;"<a class="button" >accueil</a></p>
+<p><a href="ferrari_menu_f1.html"style="color:white;"<a class="button2" >retour au Showroom</a></p>
+<section>
+
+<h2>Identification</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<p><b>Marque: </b> FERRARI</p>
+<p><b>Pays:</b> Italie</p>
+<p><b>Date du 1 er GP:</b> 1950 GP de Monaco </p>
+<p><b>Palmares: </b> 1125 GP </p>
+ <p>77 Saisons </p>
+ <p>248 Victoires </p>
+ <p>254 Poles positions </p>
+ <p>265 Meilleurs tours</p>
+ <p>1125 GP </p>
+ <p>839 Podiums </p> 
+ <p>87 Doublés </p>
+<img src="Ferrari.png">
+
+</section>
+
+<section>
+
+<h2>Les Modéles de 2010 à 2019</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>F10-2010</h3>
+<img src="F10-2010.jpeg">
+<p>Aprés le départ de K.Raikkonen c'est Fernando Alonso qui arrive avec tous les espoir de s tifosi mais ce sera une 3éme place constructeur ,F.Alonso P2, F .Massa P6</p>
+<p>Moteur:  V10 2398 cm³, 815 Ch à 17000tr/Mn, 7 vitesses, poids 600kg</p> 
+<p>Modéle presenté:nous sommes à la recherche de ce modele 1/43</p> 
+</div>
+ 
+ <div class="card">
+<h3>F150-2011</h3>
+<img src="F150-2011.jpeg">
+<p>l'ére Redbull commence et complique latache de ferrari qui finira P3 ,F.Alonso P4, F .Massa P6  </p>
+<p>Moteur:  V10 2398 cm³, 825 Ch à 17300tr/Mn, 7 vitesses, poids 600kg</p> 
+<p>Modéle presenté:nous sommes à la recherche de ce modele 1/43<br> 
+</div>
+
+  <div class="card">
+ <h3>F2012-2012</h3>
+<img src="F2002-2002.jpeg">
+<p> Ferrari se bat mais ne peut pas lutter face à un Vettel redoutable P2 constructeur, F.Alonso P2, F .Massa P7 </p>
+<p>Moteur:  V10 2398 cm³, 855 Ch à 18600tr/Mn, 7 vitesses,  poids 600kg/p>
+<p>Modéle presenté:nous sommes à la recherche de ce modele 1/43</p>
+</div>
+
+ <div class="card">
+ <h3>F138-2013</h3>
+<img src="F2003GA-2003.jpeg">
+<p>Les Années se suivent et se ressemblent P3 constructeur, F.Alonso P2, F .Massa P8</p>
+<p>Moteur:  V10 2398 cm³, 860 Ch à 18700tr/Mn, 7 vitesses,  poids 600kg</p>
+<p>Modéle presenté:nous sommes à la recherche de ce modele 1/43</p>
+</div>
+
+<div class="card">
+ <h3>F14T-2014-</h3>
+<img src="F14T-2014.jpeg">
+<p>Le retour de K.Raikkonen ne changera pass la situation Ferrari perd 1 place 4éme , F.Alonso P6, K .Raikkonen P12   </p>
+<p>Moteur:  V10 2398 cm³, 900 Ch à 19000tr/Mn, 7 vitesses,  poids 600kg</p>
+<p>Modéle presenté:nous sommes à la recherche de ce modele 1/43</p>
+</div>
+
+ <div class="card">
+ <h3>F15T-2015</h3>
+<img src="F15T-2015.jpeg">
+<p>LDuo de choc pour la saison 2015 S. Vettel 4 fois champion et K raikkonen 1 titre tente de remonter les espoirs en vain 2em place pour Ferrari  S.Vettel P3, F .Massa P4 </p>
+<p>Moteur:  V10 2398 cm³, 900 Ch à 19000tr/Mn, 7 vitesses,  600kg</p>
+<p>Modéle presenté:Edition Fabbri echelle 1/43 ,#  S.Vettel</p>
+</div>
+
+ <div class="card">
+ <h3>F2006-2006</h3>
+<img src="F2006-2006.jpeg">
+<p>Bataille pour le titre entre M.Schuacher et F.Alonso (renault), L'espagnol remportera le titre, F.Massa remplace R.Barrichello, Ferrari P2,M.Schumacher P2, F.Massa P3   </p>
+<p>Moteur:  V10 2398 cm³, 735 Ch à 19000tr/Mn, 7 vitesses, poids 605kg</p>
+<p>>Modéle presenté:nous sommes à la recherche de ce modele 1/43</p>
+</div>
+  
+<div class="card">
+ <h3>F2007-2007</h3>
+<img src="F2007-2007.jpeg">
+<p>M.Schumacher se retire, K Raikkonen le remplace , Ferrari prend sa revance pour sont 15éme titre K.Raikkonen P1, F Massa P4     </p>
+<p>Moteur:  V10 2398 cm³, 735 Ch à 19000tr/Mn, 7 vitesses, poids 605kg</p>
+<p>Modéle presenté:nous sommes à la recherche de ce modele 1/43</p>
+</div>
+  
+ <div class="card">
+ <h3>F2008-2008</h3>
+<img src="F2008-2008.jpeg">
+<p>Le dernier GP de la saison et trés contreverse Massa s'incline fait un jeune prodige L.Hamilton chez Mc Laren pour 1point.. Ferrari remporte sont 16eme titre K.Raikkonen P3, F Massa P2 </p>
+<p>Moteur:  V10 2398 cm³, 735 Ch à 19000tr/Mn, 7 vitesses, poids 605kg</p>
+<p>Modéle presenté:nous sommes à la recherche de ce modele 1/43</p>
+
+</div>
+  <div class="card">
+ <h3>F2009-2009</h3>
+<img src="F312/T4-1979.jpeg">
+<p>Victime d'une accident en Hongrie F.Massa ne pourras pas faire la saison compléte L.Badoer et G.Fishella le remplaceront, Ferrari P4, F.Massa P11, K Raikkonnen P6 ,L.Badoer P25 G.Fisichella P15  </p>
+<p>Moteur:  V10 2400 cm³, 735 Ch à 19000tr/Mn, 7 vitesses, poids 605kg</p>
+<p>Modéle presenté:Edition Fabbri echelle 1/43 ,#16 C.Leclerc</p>
+
+</section>
+</body>
+
+</html>
